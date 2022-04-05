@@ -43,8 +43,12 @@ namespace Grandia_1_HD_Remaster_Live_EXP_Display
                     var stats = new CharacterOffsets.CharacterStats();
 
                     if (Characters is null)
+                    {
                         MessageBox.Show("Unable to read Data!\n\n Make sure you were in a Battle atleast once!");
-
+                        button1.Invoke((MethodInvoker)(() => button1.Enabled = true));
+                        AllowExitLoop = false;
+                        return;
+                    }
                     var chars = new List<CharacterOffsets.CharacterStats>();
 
                     for (int i = 0; i < 4; i++)
