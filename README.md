@@ -1,7 +1,7 @@
 # Grandia-1-HD-Remaster-Live-EXP-Display
 ![image](https://user-images.githubusercontent.com/28743231/161769900-19760257-98a1-4ca2-84fd-18da35dea30a.png)
 
-a small simple tool that displays all Characters Magic/Weapon Level and Experience in Real Time.
+a small simple tool that displays all Characters Magic/Weapon Level and Experience in Real Time via Memory Reading.
 
 i made this tool to be able to see how much experience i can get per skill and optimize my leveling.
 
