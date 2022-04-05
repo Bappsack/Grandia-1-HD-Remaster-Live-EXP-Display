@@ -9,11 +9,16 @@ i made this tool to be able to see how much experience i can get per skill and o
 Instructions:
 
 1. Open Grandia 1 HD Remake and load a save.
-2. Start a battle to update to let the Game load needed Data we need.
-3. Start the tool and click: "Start Reading".
+2. Start a battle to let the Game load needed Data.
+3. Open the tool and click "Start Reading".
 
 Notes:
 
-On some machines the tool need admin privileges.
+1. On some machines the tool need admin privileges.
 
-If you get the Error Message: 'Unable to read Data! Make sure you were in a Battle atleast once!' you need to initialize a battle first.
+2. If you get the Error Message: 'Unable to read Data! Make sure you were in a Battle atleast once!' you need to initialize a battle first.
+
+3. This tool only reads memory, no edits/writes are possible.
+
+# Other Dependencies #
+[Memory.dll - C# Hacking library for making PC game trainers.](https://github.com/erfg12/memory.dll/)
