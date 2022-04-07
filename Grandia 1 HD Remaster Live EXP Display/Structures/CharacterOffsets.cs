@@ -2,33 +2,75 @@
 {
     public class CharacterOffsets
     {
+        public enum Characters
+        {
+            Justin,
+            Sue,
+            Feena,
+            Gadwin,
+            Rapp,
+            Milda,
+            Guido,
+            Liete
+        }
+
         public class CharacterStats
         {
-            public new uint SlotGap = 0x1EC;
+            public uint SlotGap = 0x1EC; // Gap Between Characters
 
-            public new byte FireLevel = 0x1A;
-            public new byte FireEXP = 0x26;
+            // Character Stats
+            public uint HP_Current = 0x00; // 2 Bytes
+            public uint HP_Max = 0x2; // 2 Bytes
 
-            public new byte WaterLevel = 0x1B;
-            public new byte WaterEXP = 0x28;
+            public uint STR = 0x6; // 2 Bytes
+            public uint VIT = 0x8; // 2 Bytes
+            public uint WIT = 0xA; // 2 Bytes
+            public uint AGI = 0xC; // 2 Bytes
+            public byte Level = 0xE; // 1 Byte
 
-            public new byte WindLevel = 0x1C;
-            public new byte WindEXP = 0x2A;
+            //public uint EXP_Total = 0x7C;
+            //public uint EXP_Next = 0x6C;
 
-            public new byte EarthLevel = 0x1D;
-            public new byte EarthEXP = 0x2C;
 
-            public new byte Weapon1Level = 0x16;
-            public new byte Weapon1EXP = 0x1E;
+            /// Skill Points / Magic Points
+            public byte SP_Current = 0x6E; // 2 Bytes
+            public byte SP_Total = 0x70; // 2 Bytes
 
-            public new byte Weapon2Level = 0x17;
-            public new byte Weapon2EXP = 0x20;
+            public byte Magic1_Current = 0x12;
+            public byte Magic1_Total = 0x15;
 
-            public new byte Weapon3Level = 0x18;
-            public new byte Weapon3EXP = 0x22;
+            public byte Magic2_Current = 0x13;
+            public byte Magic2_Total = 0x16;
 
-            public new byte Weapon4Level = 0x19;
-            public new byte Weapon4EXP = 0x24;
+            public byte Magic3_Current = 0x14;
+            public byte Magic3_Total = 0x17;
+
+
+            // Magic/Weapon Level/Experience
+
+            public byte FireLevel = 0x7A;
+            public byte FireEXP = 0x86;
+
+            public byte WaterLevel = 0x7B;
+            public byte WaterEXP = 0x88;
+
+            public byte WindLevel = 0x7C;
+            public byte WindEXP = 0x8A;
+
+            public byte EarthLevel = 0x7D;
+            public byte EarthEXP = 0x8C;
+
+            public byte Weapon1Level = 0x76;
+            public byte Weapon1EXP = 0x7E;
+
+            public byte Weapon2Level = 0x77;
+            public byte Weapon2EXP = 0x80;
+
+            public byte Weapon3Level = 0x78;
+            public byte Weapon3EXP = 0x82;
+
+            public byte Weapon4Level = 0x79;
+            public byte Weapon4EXP = 0x84;
         }
     }
 }

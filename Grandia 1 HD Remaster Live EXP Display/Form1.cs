@@ -1,6 +1,5 @@
 ﻿using Memory;
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
@@ -9,73 +8,95 @@ namespace Grandia_1_HD_Remaster_Live_EXP_Display
 {
     public partial class Form1 : Form
     {
+        private Memory.Mem memory = new Mem();
         private static bool AllowExitLoop = true;
 
         public Form1()
         {
             InitializeComponent();
-            button3.Enabled = false;
+            Stop.Enabled = false;
 
             this.FormClosing += Form1_Close;
         }
 
         private void Form1_Close(object sender, FormClosingEventArgs e)
         {
-            AllowExitLoop = true;
             Environment.Exit(0);
         }
 
         private void MemoryWatcher()
         {
-            var memory = new Mem();
             memory.OpenProcess("grandia");
 
-            Thread.Sleep(100);
             while (AllowExitLoop)
             {
                 try
                 {
-                    byte[] Characters = memory.ReadBytes(GameOffsets.P1_Fight_Status, 2000);
-                    int RefreshTime = 100;
+                    byte[] Characters = memory.ReadBytes(GameOffsets.Ingame_Characters_Stats, 3000);
 
-                    textBox1.Invoke((MethodInvoker)(() => int.TryParse(textBox1.Text, out RefreshTime)));
+                    int RefreshTime = 1000; /// just in case
+
+                    Refresh_Time_Box.Invoke((MethodInvoker)(() => int.TryParse(Refresh_Time_Box.Text, out RefreshTime)));
 
                     var stats = new CharacterOffsets.CharacterStats();
 
                     if (Characters is null)
                     {
                         MessageBox.Show("Unable to read Data!\n\n Make sure you were in a Battle atleast once!");
-                        button1.Invoke((MethodInvoker)(() => button1.Enabled = true));
-                        button1.Invoke((MethodInvoker)(() => button3.Enabled = false));
+                        Start.Invoke((MethodInvoker)(() => Start.Enabled = true));
+                        Start.Invoke((MethodInvoker)(() => Stop.Enabled = false));
                         AllowExitLoop = true;
                         return;
                     }
-                    var chars = new List<CharacterOffsets.CharacterStats>();
 
                     for (int i = 0; i < 4; i++)
                     {
+                        long Gap = i * stats.SlotGap;
                         if (i is 0)
                         {
-                            // Levels
-                            label_Fire_Level_1.Invoke((MethodInvoker)(() => label_Fire_Level_1.Text = Characters[(i * stats.SlotGap) + stats.FireLevel].ToString()));
-                            label_Wind_Level_1.Invoke((MethodInvoker)(() => label_Wind_Level_1.Text = Characters[(i * stats.SlotGap) + stats.WindLevel].ToString()));
-                            label_Water_Level_1.Invoke((MethodInvoker)(() => label_Water_Level_1.Text = Characters[(i * stats.SlotGap) + stats.WaterLevel].ToString()));
-                            label_Earth_Level_1.Invoke((MethodInvoker)(() => label_Earth_Level_1.Text = Characters[(i * stats.SlotGap) + stats.EarthLevel].ToString()));
+                            // Character Stats
+                            HP_Current_1.Invoke((MethodInvoker)(() => HP_Current_1.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.HP_Current)).ToString()));
+                            HP_Total_1.Invoke((MethodInvoker)(() => HP_Total_1.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.HP_Max)).ToString()));
+                            SP_Current_1.Invoke((MethodInvoker)(() => SP_Current_1.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.SP_Current)).ToString()));
+                            SP_Total_1.Invoke((MethodInvoker)(() => SP_Total_1.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.SP_Total)).ToString()));
 
-                            label_Weapon1_Level_1.Invoke((MethodInvoker)(() => label_Weapon1_Level_1.Text = Characters[(i * stats.SlotGap) + stats.Weapon1Level].ToString()));
-                            label_Weapon2_Level_1.Invoke((MethodInvoker)(() => label_Weapon2_Level_1.Text = Characters[(i * stats.SlotGap) + stats.Weapon2Level].ToString()));
-                            label_Weapon3_Level_1.Invoke((MethodInvoker)(() => label_Weapon3_Level_1.Text = Characters[(i * stats.SlotGap) + stats.Weapon3Level].ToString()));
+                            MP1_Current_1.Invoke((MethodInvoker)(() => MP1_Current_1.Text = Characters[Gap + stats.Magic1_Current].ToString()));
+                            MP1_Total_1.Invoke((MethodInvoker)(() => MP1_Total_1.Text = Characters[Gap + stats.Magic1_Total].ToString()));
+                            MP2_Current_1.Invoke((MethodInvoker)(() => MP2_Current_1.Text = Characters[Gap + stats.Magic2_Current].ToString()));
+                            MP2_Total_1.Invoke((MethodInvoker)(() => MP2_Total_1.Text = Characters[Gap + stats.Magic2_Total].ToString()));
+                            MP3_Current_1.Invoke((MethodInvoker)(() => MP3_Current_1.Text = Characters[Gap + stats.Magic3_Current].ToString()));
+                            MP3_Total_1.Invoke((MethodInvoker)(() => MP3_Total_1.Text = Characters[Gap + stats.Magic3_Total].ToString()));
+
+
+                            // Base Stats
+                            STR_1.Invoke((MethodInvoker)(() => STR_1.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.STR)).ToString()));
+                            VIT_1.Invoke((MethodInvoker)(() => VIT_1.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.VIT)).ToString()));
+                            WIT_1.Invoke((MethodInvoker)(() => WIT_1.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.WIT)).ToString()));
+                            AGI_1.Invoke((MethodInvoker)(() => AGI_1.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.AGI)).ToString()));
+
+                            Level_1.Invoke((MethodInvoker)(() => Level_1.Text = Characters[Gap + stats.Level].ToString()));
+
+
+                            // Levels
+                            label_Fire_Level_1.Invoke((MethodInvoker)(() => label_Fire_Level_1.Text = Characters[Gap + stats.FireLevel].ToString()));
+                            label_Wind_Level_1.Invoke((MethodInvoker)(() => label_Wind_Level_1.Text = Characters[Gap + stats.WindLevel].ToString()));
+                            label_Water_Level_1.Invoke((MethodInvoker)(() => label_Water_Level_1.Text = Characters[Gap + stats.WaterLevel].ToString()));
+                            label_Earth_Level_1.Invoke((MethodInvoker)(() => label_Earth_Level_1.Text = Characters[Gap + stats.EarthLevel].ToString()));
+
+                            label_Weapon1_Level_1.Invoke((MethodInvoker)(() => label_Weapon1_Level_1.Text = Characters[Gap + stats.Weapon1Level].ToString()));
+                            label_Weapon2_Level_1.Invoke((MethodInvoker)(() => label_Weapon2_Level_1.Text = Characters[Gap + stats.Weapon2Level].ToString()));
+                            label_Weapon3_Level_1.Invoke((MethodInvoker)(() => label_Weapon3_Level_1.Text = Characters[Gap + stats.Weapon3Level].ToString()));
 
 
                             // EXP
-                            var FireEXP = Characters[(i * stats.SlotGap) + stats.FireEXP];
-                            var WindEXP = Characters[(i * stats.SlotGap) + stats.WindEXP];
-                            var WaterEXP = Characters[(i * stats.SlotGap) + stats.WaterEXP];
-                            var EarthEXP = Characters[(i * stats.SlotGap) + stats.EarthEXP];
+                            var FireEXP = Characters[Gap + stats.FireEXP];
+                            var WindEXP = Characters[Gap + stats.WindEXP];
+                            var WaterEXP = Characters[Gap + stats.WaterEXP];
+                            var EarthEXP = Characters[Gap + stats.EarthEXP];
 
-                            var Weapon1EXP = Characters[(i * stats.SlotGap) + stats.Weapon1EXP];
-                            var Weapon2EXP = Characters[(i * stats.SlotGap) + stats.Weapon2EXP];
-                            var Weapon3EXP = Characters[(i * stats.SlotGap) + stats.Weapon3EXP];
+                            var Weapon1EXP = Characters[Gap + stats.Weapon1EXP];
+                            var Weapon2EXP = Characters[Gap + stats.Weapon2EXP];
+                            var Weapon3EXP = Characters[Gap + stats.Weapon3EXP];
 
                             label_Fire_EXP_1.Invoke((MethodInvoker)(() => label_Fire_EXP_1.Text = FireEXP.ToString()));
                             label_Wind_EXP_1.Invoke((MethodInvoker)(() => label_Wind_EXP_1.Text = WindEXP.ToString()));
@@ -98,26 +119,49 @@ namespace Grandia_1_HD_Remaster_Live_EXP_Display
                         }
                         else if (i is 1)
                         {
-                            // Levels
-                            label_Fire_Level_2.Invoke((MethodInvoker)(() => label_Fire_Level_2.Text = Characters[(i * stats.SlotGap) + stats.FireLevel].ToString()));
-                            label_Wind_Level_2.Invoke((MethodInvoker)(() => label_Wind_Level_2.Text = Characters[(i * stats.SlotGap) + stats.WindLevel].ToString()));
-                            label_Water_Level_2.Invoke((MethodInvoker)(() => label_Water_Level_2.Text = Characters[(i * stats.SlotGap) + stats.WaterLevel].ToString()));
-                            label_Earth_Level_2.Invoke((MethodInvoker)(() => label_Earth_Level_2.Text = Characters[(i * stats.SlotGap) + stats.EarthLevel].ToString()));
+                            // Character Stats
+                            HP_Current_2.Invoke((MethodInvoker)(() => HP_Current_2.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.HP_Current)).ToString()));
+                            HP_Total_2.Invoke((MethodInvoker)(() => HP_Total_2.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.HP_Max)).ToString()));
+                            SP_Current_2.Invoke((MethodInvoker)(() => SP_Current_2.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.SP_Current)).ToString()));
+                            SP_Total_2.Invoke((MethodInvoker)(() => SP_Total_2.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.SP_Total)).ToString()));
 
-                            label_Weapon1_Level_2.Invoke((MethodInvoker)(() => label_Weapon1_Level_2.Text = Characters[(i * stats.SlotGap) + stats.Weapon1Level].ToString()));
-                            label_Weapon2_Level_2.Invoke((MethodInvoker)(() => label_Weapon2_Level_2.Text = Characters[(i * stats.SlotGap) + stats.Weapon2Level].ToString()));
-                            label_Weapon3_Level_2.Invoke((MethodInvoker)(() => label_Weapon3_Level_2.Text = Characters[(i * stats.SlotGap) + stats.Weapon3Level].ToString()));
+                            MP1_Current_2.Invoke((MethodInvoker)(() => MP1_Current_2.Text = Characters[Gap + stats.Magic1_Current].ToString()));
+                            MP1_Total_2.Invoke((MethodInvoker)(() => MP1_Total_2.Text = Characters[Gap + stats.Magic1_Total].ToString()));
+                            MP2_Current_2.Invoke((MethodInvoker)(() => MP2_Current_2.Text = Characters[Gap + stats.Magic2_Current].ToString()));
+                            MP2_Total_2.Invoke((MethodInvoker)(() => MP2_Total_2.Text = Characters[Gap + stats.Magic2_Total].ToString()));
+                            MP3_Current_2.Invoke((MethodInvoker)(() => MP3_Current_2.Text = Characters[Gap + stats.Magic3_Current].ToString()));
+                            MP3_Total_2.Invoke((MethodInvoker)(() => MP3_Total_2.Text = Characters[Gap + stats.Magic3_Total].ToString()));
+
+
+                            // Base Stats
+                            STR_2.Invoke((MethodInvoker)(() => STR_2.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.STR)).ToString()));
+                            VIT_2.Invoke((MethodInvoker)(() => VIT_2.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.VIT)).ToString()));
+                            WIT_2.Invoke((MethodInvoker)(() => WIT_2.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.WIT)).ToString()));
+                            AGI_2.Invoke((MethodInvoker)(() => AGI_2.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.AGI)).ToString()));
+
+                            Level_2.Invoke((MethodInvoker)(() => Level_2.Text = Characters[Gap + stats.Level].ToString()));
+
+
+                            // Levels
+                            label_Fire_Level_2.Invoke((MethodInvoker)(() => label_Fire_Level_2.Text = Characters[Gap + stats.FireLevel].ToString()));
+                            label_Wind_Level_2.Invoke((MethodInvoker)(() => label_Wind_Level_2.Text = Characters[Gap + stats.WindLevel].ToString()));
+                            label_Water_Level_2.Invoke((MethodInvoker)(() => label_Water_Level_2.Text = Characters[Gap + stats.WaterLevel].ToString()));
+                            label_Earth_Level_2.Invoke((MethodInvoker)(() => label_Earth_Level_2.Text = Characters[Gap + stats.EarthLevel].ToString()));
+
+                            label_Weapon1_Level_2.Invoke((MethodInvoker)(() => label_Weapon1_Level_2.Text = Characters[Gap + stats.Weapon1Level].ToString()));
+                            label_Weapon2_Level_2.Invoke((MethodInvoker)(() => label_Weapon2_Level_2.Text = Characters[Gap + stats.Weapon2Level].ToString()));
+                            label_Weapon3_Level_2.Invoke((MethodInvoker)(() => label_Weapon3_Level_2.Text = Characters[Gap + stats.Weapon3Level].ToString()));
 
 
                             // EXP
-                            var FireEXP = Characters[(i * stats.SlotGap) + stats.FireEXP];
-                            var WindEXP = Characters[(i * stats.SlotGap) + stats.WindEXP];
-                            var WaterEXP = Characters[(i * stats.SlotGap) + stats.WaterEXP];
-                            var EarthEXP = Characters[(i * stats.SlotGap) + stats.EarthEXP];
+                            var FireEXP = Characters[Gap + stats.FireEXP];
+                            var WindEXP = Characters[Gap + stats.WindEXP];
+                            var WaterEXP = Characters[Gap + stats.WaterEXP];
+                            var EarthEXP = Characters[Gap + stats.EarthEXP];
 
-                            var Weapon1EXP = Characters[(i * stats.SlotGap) + stats.Weapon1EXP];
-                            var Weapon2EXP = Characters[(i * stats.SlotGap) + stats.Weapon2EXP];
-                            var Weapon3EXP = Characters[(i * stats.SlotGap) + stats.Weapon3EXP];
+                            var Weapon1EXP = Characters[Gap + stats.Weapon1EXP];
+                            var Weapon2EXP = Characters[Gap + stats.Weapon2EXP];
+                            var Weapon3EXP = Characters[Gap + stats.Weapon3EXP];
 
                             label_Fire_EXP_2.Invoke((MethodInvoker)(() => label_Fire_EXP_2.Text = FireEXP.ToString()));
                             label_Wind_EXP_2.Invoke((MethodInvoker)(() => label_Wind_EXP_2.Text = WindEXP.ToString()));
@@ -140,26 +184,49 @@ namespace Grandia_1_HD_Remaster_Live_EXP_Display
                         }
                         else if (i is 2)
                         {
-                            // Levels
-                            label_Fire_Level_3.Invoke((MethodInvoker)(() => label_Fire_Level_3.Text = Characters[(i * stats.SlotGap) + stats.FireLevel].ToString()));
-                            label_Wind_Level_3.Invoke((MethodInvoker)(() => label_Wind_Level_3.Text = Characters[(i * stats.SlotGap) + stats.WindLevel].ToString()));
-                            label_Water_Level_3.Invoke((MethodInvoker)(() => label_Water_Level_3.Text = Characters[(i * stats.SlotGap) + stats.WaterLevel].ToString()));
-                            label_Earth_Level_3.Invoke((MethodInvoker)(() => label_Earth_Level_3.Text = Characters[(i * stats.SlotGap) + stats.EarthLevel].ToString()));
+                            // Character Stats
+                            HP_Current_3.Invoke((MethodInvoker)(() => HP_Current_3.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.HP_Current)).ToString()));
+                            HP_Total_3.Invoke((MethodInvoker)(() => HP_Total_3.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.HP_Max)).ToString()));
+                            SP_Current_3.Invoke((MethodInvoker)(() => SP_Current_3.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.SP_Current)).ToString()));
+                            SP_Total_3.Invoke((MethodInvoker)(() => SP_Total_3.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.SP_Total)).ToString()));
 
-                            label_Weapon1_Level_3.Invoke((MethodInvoker)(() => label_Weapon1_Level_3.Text = Characters[(i * stats.SlotGap) + stats.Weapon1Level].ToString()));
-                            label_Weapon2_Level_3.Invoke((MethodInvoker)(() => label_Weapon2_Level_3.Text = Characters[(i * stats.SlotGap) + stats.Weapon2Level].ToString()));
-                            label_Weapon3_Level_3.Invoke((MethodInvoker)(() => label_Weapon3_Level_3.Text = Characters[(i * stats.SlotGap) + stats.Weapon3Level].ToString()));
+                            MP1_Current_3.Invoke((MethodInvoker)(() => MP1_Current_3.Text = Characters[Gap + stats.Magic1_Current].ToString()));
+                            MP1_Total_3.Invoke((MethodInvoker)(() => MP1_Total_3.Text = Characters[Gap + stats.Magic1_Total].ToString()));
+                            MP2_Current_3.Invoke((MethodInvoker)(() => MP2_Current_3.Text = Characters[Gap + stats.Magic2_Current].ToString()));
+                            MP2_Total_3.Invoke((MethodInvoker)(() => MP2_Total_3.Text = Characters[Gap + stats.Magic2_Total].ToString()));
+                            MP3_Current_3.Invoke((MethodInvoker)(() => MP3_Current_3.Text = Characters[Gap + stats.Magic3_Current].ToString()));
+                            MP3_Total_3.Invoke((MethodInvoker)(() => MP3_Total_3.Text = Characters[Gap + stats.Magic3_Total].ToString()));
+
+
+                            // Base Stats
+                            STR_3.Invoke((MethodInvoker)(() => STR_3.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.STR)).ToString()));
+                            VIT_3.Invoke((MethodInvoker)(() => VIT_3.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.VIT)).ToString()));
+                            WIT_3.Invoke((MethodInvoker)(() => WIT_3.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.WIT)).ToString()));
+                            AGI_3.Invoke((MethodInvoker)(() => AGI_3.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.AGI)).ToString()));
+
+                            Level_3.Invoke((MethodInvoker)(() => Level_3.Text = Characters[Gap + stats.Level].ToString()));
+
+
+                            // Levels
+                            label_Fire_Level_3.Invoke((MethodInvoker)(() => label_Fire_Level_3.Text = Characters[Gap + stats.FireLevel].ToString()));
+                            label_Wind_Level_3.Invoke((MethodInvoker)(() => label_Wind_Level_3.Text = Characters[Gap + stats.WindLevel].ToString()));
+                            label_Water_Level_3.Invoke((MethodInvoker)(() => label_Water_Level_3.Text = Characters[Gap + stats.WaterLevel].ToString()));
+                            label_Earth_Level_3.Invoke((MethodInvoker)(() => label_Earth_Level_3.Text = Characters[Gap + stats.EarthLevel].ToString()));
+
+                            label_Weapon1_Level_3.Invoke((MethodInvoker)(() => label_Weapon1_Level_3.Text = Characters[Gap + stats.Weapon1Level].ToString()));
+                            label_Weapon2_Level_3.Invoke((MethodInvoker)(() => label_Weapon2_Level_3.Text = Characters[Gap + stats.Weapon2Level].ToString()));
+                            label_Weapon3_Level_3.Invoke((MethodInvoker)(() => label_Weapon3_Level_3.Text = Characters[Gap + stats.Weapon3Level].ToString()));
 
 
                             // EXP
-                            var FireEXP = Characters[(i * stats.SlotGap) + stats.FireEXP];
-                            var WindEXP = Characters[(i * stats.SlotGap) + stats.WindEXP];
-                            var WaterEXP = Characters[(i * stats.SlotGap) + stats.WaterEXP];
-                            var EarthEXP = Characters[(i * stats.SlotGap) + stats.EarthEXP];
+                            var FireEXP = Characters[Gap + stats.FireEXP];
+                            var WindEXP = Characters[Gap + stats.WindEXP];
+                            var WaterEXP = Characters[Gap + stats.WaterEXP];
+                            var EarthEXP = Characters[Gap + stats.EarthEXP];
 
-                            var Weapon1EXP = Characters[(i * stats.SlotGap) + stats.Weapon1EXP];
-                            var Weapon2EXP = Characters[(i * stats.SlotGap) + stats.Weapon2EXP];
-                            var Weapon3EXP = Characters[(i * stats.SlotGap) + stats.Weapon3EXP];
+                            var Weapon1EXP = Characters[Gap + stats.Weapon1EXP];
+                            var Weapon2EXP = Characters[Gap + stats.Weapon2EXP];
+                            var Weapon3EXP = Characters[Gap + stats.Weapon3EXP];
 
                             label_Fire_EXP_3.Invoke((MethodInvoker)(() => label_Fire_EXP_3.Text = FireEXP.ToString()));
                             label_Wind_EXP_3.Invoke((MethodInvoker)(() => label_Wind_EXP_3.Text = WindEXP.ToString()));
@@ -182,26 +249,49 @@ namespace Grandia_1_HD_Remaster_Live_EXP_Display
                         }
                         else if (i is 3)
                         {
-                            // Levels
-                            label_Fire_Level_4.Invoke((MethodInvoker)(() => label_Fire_Level_4.Text = Characters[(i * stats.SlotGap) + stats.FireLevel].ToString()));
-                            label_Wind_Level_4.Invoke((MethodInvoker)(() => label_Wind_Level_4.Text = Characters[(i * stats.SlotGap) + stats.WindLevel].ToString()));
-                            label_Water_Level_4.Invoke((MethodInvoker)(() => label_Water_Level_4.Text = Characters[(i * stats.SlotGap) + stats.WaterLevel].ToString()));
-                            label_Earth_Level_4.Invoke((MethodInvoker)(() => label_Earth_Level_4.Text = Characters[(i * stats.SlotGap) + stats.EarthLevel].ToString()));
+                            // Character Stats
+                            HP_Current_4.Invoke((MethodInvoker)(() => HP_Current_4.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.HP_Current)).ToString()));
+                            HP_Total_4.Invoke((MethodInvoker)(() => HP_Total_4.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.HP_Max)).ToString()));
+                            SP_Current_4.Invoke((MethodInvoker)(() => SP_Current_4.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.SP_Current)).ToString()));
+                            SP_Total_4.Invoke((MethodInvoker)(() => SP_Total_4.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.SP_Total)).ToString()));
 
-                            label_Weapon1_Level_4.Invoke((MethodInvoker)(() => label_Weapon1_Level_4.Text = Characters[(i * stats.SlotGap) + stats.Weapon1Level].ToString()));
-                            label_Weapon2_Level_4.Invoke((MethodInvoker)(() => label_Weapon2_Level_4.Text = Characters[(i * stats.SlotGap) + stats.Weapon2Level].ToString()));
-                            label_Weapon3_Level_4.Invoke((MethodInvoker)(() => label_Weapon3_Level_4.Text = Characters[(i * stats.SlotGap) + stats.Weapon3Level].ToString()));
+                            MP1_Current_4.Invoke((MethodInvoker)(() => MP1_Current_4.Text = Characters[Gap + stats.Magic1_Current].ToString()));
+                            MP1_Total_4.Invoke((MethodInvoker)(() => MP1_Total_4.Text = Characters[Gap + stats.Magic1_Total].ToString()));
+                            MP2_Current_4.Invoke((MethodInvoker)(() => MP2_Current_4.Text = Characters[Gap + stats.Magic2_Current].ToString()));
+                            MP2_Total_4.Invoke((MethodInvoker)(() => MP2_Total_4.Text = Characters[Gap + stats.Magic2_Total].ToString()));
+                            MP3_Current_4.Invoke((MethodInvoker)(() => MP3_Current_4.Text = Characters[Gap + stats.Magic3_Current].ToString()));
+                            MP3_Total_4.Invoke((MethodInvoker)(() => MP3_Total_4.Text = Characters[Gap + stats.Magic3_Total].ToString()));
+
+
+                            // Base Stats
+                            STR_4.Invoke((MethodInvoker)(() => STR_4.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.STR)).ToString()));
+                            VIT_4.Invoke((MethodInvoker)(() => VIT_4.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.VIT)).ToString()));
+                            WIT_4.Invoke((MethodInvoker)(() => WIT_4.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.WIT)).ToString()));
+                            AGI_4.Invoke((MethodInvoker)(() => AGI_4.Text = BitConverter.ToInt16(Characters, (int)(Gap + stats.AGI)).ToString()));
+
+                            Level_4.Invoke((MethodInvoker)(() => Level_4.Text = Characters[Gap + stats.Level].ToString()));
+
+
+                            // Levels
+                            label_Fire_Level_4.Invoke((MethodInvoker)(() => label_Fire_Level_4.Text = Characters[Gap + stats.FireLevel].ToString()));
+                            label_Wind_Level_4.Invoke((MethodInvoker)(() => label_Wind_Level_4.Text = Characters[Gap + stats.WindLevel].ToString()));
+                            label_Water_Level_4.Invoke((MethodInvoker)(() => label_Water_Level_4.Text = Characters[Gap + stats.WaterLevel].ToString()));
+                            label_Earth_Level_4.Invoke((MethodInvoker)(() => label_Earth_Level_4.Text = Characters[Gap + stats.EarthLevel].ToString()));
+
+                            label_Weapon1_Level_4.Invoke((MethodInvoker)(() => label_Weapon1_Level_4.Text = Characters[Gap + stats.Weapon1Level].ToString()));
+                            label_Weapon2_Level_4.Invoke((MethodInvoker)(() => label_Weapon2_Level_4.Text = Characters[Gap + stats.Weapon2Level].ToString()));
+                            label_Weapon3_Level_4.Invoke((MethodInvoker)(() => label_Weapon3_Level_4.Text = Characters[Gap + stats.Weapon3Level].ToString()));
 
 
                             // EXP
-                            var FireEXP = Characters[(i * stats.SlotGap) + stats.FireEXP];
-                            var WindEXP = Characters[(i * stats.SlotGap) + stats.WindEXP];
-                            var WaterEXP = Characters[(i * stats.SlotGap) + stats.WaterEXP];
-                            var EarthEXP = Characters[(i * stats.SlotGap) + stats.EarthEXP];
+                            var FireEXP = Characters[Gap + stats.FireEXP];
+                            var WindEXP = Characters[Gap + stats.WindEXP];
+                            var WaterEXP = Characters[Gap + stats.WaterEXP];
+                            var EarthEXP = Characters[Gap + stats.EarthEXP];
 
-                            var Weapon1EXP = Characters[(i * stats.SlotGap) + stats.Weapon1EXP];
-                            var Weapon2EXP = Characters[(i * stats.SlotGap) + stats.Weapon2EXP];
-                            var Weapon3EXP = Characters[(i * stats.SlotGap) + stats.Weapon3EXP];
+                            var Weapon1EXP = Characters[Gap + stats.Weapon1EXP];
+                            var Weapon2EXP = Characters[Gap + stats.Weapon2EXP];
+                            var Weapon3EXP = Characters[Gap + stats.Weapon3EXP];
 
                             label_Fire_EXP_4.Invoke((MethodInvoker)(() => label_Fire_EXP_4.Text = FireEXP.ToString()));
                             label_Wind_EXP_4.Invoke((MethodInvoker)(() => label_Wind_EXP_4.Text = WindEXP.ToString()));
@@ -228,8 +318,8 @@ namespace Grandia_1_HD_Remaster_Live_EXP_Display
                 catch { }
             }
 
-            button1.Invoke((MethodInvoker)(() => button1.Enabled = true));
-            AllowExitLoop = false;
+            Start.Invoke((MethodInvoker)(() => Start.Enabled = true));
+            AllowExitLoop = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -244,17 +334,17 @@ namespace Grandia_1_HD_Remaster_Live_EXP_Display
                 MessageBox.Show("Grandia was not found! please start Grandia 1 first and make sure you started this Program with Admin Privileges!");
                 return;
             }
-            button1.Enabled = false;
-            button3.Enabled = true;
+            Start.Enabled = false;
+            Stop.Enabled = true;
             new Thread(MemoryWatcher).Start();
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            button1.Enabled = true;
-            AllowExitLoop = true;
-            button3.Enabled = false;
+            Stop.Enabled = false;
+            Start.Enabled = true;
+            AllowExitLoop = false;
         }
     }
 }
