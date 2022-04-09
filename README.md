@@ -1,14 +1,16 @@
-# Grandia-1-HD-Remaster-Live-EXP-Display
-![image](https://user-images.githubusercontent.com/28743231/161769900-19760257-98a1-4ca2-84fd-18da35dea30a.png)
+# Grandia-HD-Remaster-Live-EXP-Display
+![image](https://user-images.githubusercontent.com/28743231/162574241-a1f592b9-47b8-41bf-b09d-afc1a07c6923.png)
 
 a small simple tool that displays all Characters Magic/Weapon Level and Experience in Real Time via Memory Reading.
 
 i made this tool to be able to see how much experience i can get per skill and optimize my leveling.
 
 
+Grandia 2 has way limited features yet since i didn't progress much in the Game, only SC/MC/Gold & EXP are included for now.
+
 Instructions:
 
-1. Open Grandia 1 HD Remake and load a save.
+1. Open Grandia 1 or 2 HD Remake and load a save.
 2. Start a battle to let the Game load needed Data.
 3. Open the tool and click "Start Reading".
 
