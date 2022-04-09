@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C1C8F733-AF58-4CFC-838C-822683DF4134}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Grandia_1_HD_Remaster_Live_EXP_Display</RootNamespace>
-    <AssemblyName>Grandia 1 HD Remaster Live EXP Display</AssemblyName>
+    <RootNamespace>Grandia_HD_Remaster_Live_EXP_Display</RootNamespace>
+    <AssemblyName>Grandia HD Remaster Live EXP Display</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -72,6 +72,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

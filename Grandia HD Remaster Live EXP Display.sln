@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grandia 1 HD Remaster Live EXP Display", "Grandia 1 HD Remaster Live EXP Display\Grandia 1 HD Remaster Live EXP Display.csproj", "{C1C8F733-AF58-4CFC-838C-822683DF4134}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grandia HD Remaster Live EXP Display", "Grandia 1 HD Remaster Live EXP Display\Grandia HD Remaster Live EXP Display.csproj", "{C1C8F733-AF58-4CFC-838C-822683DF4134}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
