@@ -3,8 +3,14 @@ using System.Windows.Forms;
 
 namespace Grandia_1_HD_Remaster_Live_EXP_Display
 {
-    internal static class Program
+    public static class Program
     {
+        public static int RefreshTime { get; set; } = 100;
+        public static bool Grandia1_Running { get; set; } = false;
+        public static bool Grandia2_Running { get; set; } = false;
+
+        public static Form1 Form { get; private set; }
+
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
         /// </summary>
@@ -13,7 +19,8 @@ namespace Grandia_1_HD_Remaster_Live_EXP_Display
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Form = new Form1();
+            Application.Run(Form);
         }
     }
 }

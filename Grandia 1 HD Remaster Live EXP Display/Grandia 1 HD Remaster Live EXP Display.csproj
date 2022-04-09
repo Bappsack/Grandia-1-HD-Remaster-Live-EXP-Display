@@ -57,8 +57,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Structures\CharacterOffsets.cs" />
-    <Compile Include="Structures\GameOffsets.cs" />
+    <Compile Include="Data\Structures.cs" />
+    <Compile Include="Data\Offsets.cs" />
+    <Compile Include="Workers\Grandia1_Worker.cs" />
+    <Compile Include="Workers\Grandia2_Worker.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

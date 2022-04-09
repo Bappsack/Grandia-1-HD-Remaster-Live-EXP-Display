@@ -30,6 +30,8 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.Name_1 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.Level_1 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.AGI_1 = new System.Windows.Forms.Label();
@@ -70,6 +72,9 @@
             this.label_Wind_1 = new System.Windows.Forms.Label();
             this.label_Fire_1 = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.EXP_Total_1 = new System.Windows.Forms.Label();
+            this.EXP_Current_1 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.MP3_Total_1 = new System.Windows.Forms.Label();
             this.MP3_Current_1 = new System.Windows.Forms.Label();
             this.MP2_Total_1 = new System.Windows.Forms.Label();
@@ -85,10 +90,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.Start = new System.Windows.Forms.Button();
-            this.Exit = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.Name_2 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.Level_2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.AGI_2 = new System.Windows.Forms.Label();
@@ -129,6 +134,9 @@
             this.label_Wind_2 = new System.Windows.Forms.Label();
             this.label_Fire_2 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.EXP_Total_2 = new System.Windows.Forms.Label();
+            this.EXP_Current_2 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
             this.MP3_Total_2 = new System.Windows.Forms.Label();
             this.MP3_Current_2 = new System.Windows.Forms.Label();
             this.MP2_Total_2 = new System.Windows.Forms.Label();
@@ -146,6 +154,8 @@
             this.label35 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.Name_3 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
             this.Level_3 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.AGI_3 = new System.Windows.Forms.Label();
@@ -157,6 +167,9 @@
             this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.EXP_Total_3 = new System.Windows.Forms.Label();
+            this.EXP_Current_3 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
             this.MP3_Total_3 = new System.Windows.Forms.Label();
             this.MP3_Current_3 = new System.Windows.Forms.Label();
             this.MP2_Total_3 = new System.Windows.Forms.Label();
@@ -203,7 +216,9 @@
             this.label63 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.Name_4 = new System.Windows.Forms.Label();
             this.Level_4 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
             this.AGI_4 = new System.Windows.Forms.Label();
             this.WIT_4 = new System.Windows.Forms.Label();
@@ -214,8 +229,11 @@
             this.label76 = new System.Windows.Forms.Label();
             this.label77 = new System.Windows.Forms.Label();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.EXP_Total_4 = new System.Windows.Forms.Label();
             this.MP3_Total_4 = new System.Windows.Forms.Label();
+            this.EXP_Current_4 = new System.Windows.Forms.Label();
             this.MP3_Current_4 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
             this.MP2_Total_4 = new System.Windows.Forms.Label();
             this.MP2_Current_4 = new System.Windows.Forms.Label();
             this.MP1_Total_4 = new System.Windows.Forms.Label();
@@ -258,9 +276,27 @@
             this.label82 = new System.Windows.Forms.Label();
             this.label83 = new System.Windows.Forms.Label();
             this.label84 = new System.Windows.Forms.Label();
-            this.label85 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Grandia1_Start = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.Gold_Total = new System.Windows.Forms.Label();
+            this.MP_Coins_Total = new System.Windows.Forms.Label();
+            this.SP_Coins_Total = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.EXP = new System.Windows.Forms.Label();
+            this.Gold = new System.Windows.Forms.Label();
+            this.MP_Coins = new System.Windows.Forms.Label();
+            this.SP_Coins = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Grandia2_Start = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
             this.Refresh_Time_Box = new System.Windows.Forms.TextBox();
-            this.Stop = new System.Windows.Forms.Button();
+            this.label85 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox10.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -277,6 +313,12 @@
             this.groupBox15.SuspendLayout();
             this.groupBox16.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.groupBox18.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox17.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -284,15 +326,17 @@
             this.groupBox1.Controls.Add(this.groupBox10);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.groupBox9);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(6, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(336, 326);
+            this.groupBox1.Size = new System.Drawing.Size(336, 346);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Character 1";
             // 
             // groupBox10
             // 
+            this.groupBox10.Controls.Add(this.Name_1);
+            this.groupBox10.Controls.Add(this.label22);
             this.groupBox10.Controls.Add(this.Level_1);
             this.groupBox10.Controls.Add(this.label24);
             this.groupBox10.Controls.Add(this.AGI_1);
@@ -303,12 +347,30 @@
             this.groupBox10.Controls.Add(this.label7);
             this.groupBox10.Controls.Add(this.label8);
             this.groupBox10.Controls.Add(this.label6);
-            this.groupBox10.Location = new System.Drawing.Point(242, 19);
+            this.groupBox10.Location = new System.Drawing.Point(237, 14);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(87, 122);
+            this.groupBox10.Size = new System.Drawing.Size(87, 150);
             this.groupBox10.TabIndex = 37;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Base Stats";
+            // 
+            // Name_1
+            // 
+            this.Name_1.AutoSize = true;
+            this.Name_1.Location = new System.Drawing.Point(44, 133);
+            this.Name_1.Name = "Name_1";
+            this.Name_1.Size = new System.Drawing.Size(33, 13);
+            this.Name_1.TabIndex = 18;
+            this.Name_1.Text = "None";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(6, 134);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(38, 13);
+            this.label22.TabIndex = 21;
+            this.label22.Text = "Name:";
             // 
             // Level_1
             // 
@@ -430,7 +492,7 @@
             this.groupBox2.Controls.Add(this.label_Water_1);
             this.groupBox2.Controls.Add(this.label_Wind_1);
             this.groupBox2.Controls.Add(this.label_Fire_1);
-            this.groupBox2.Location = new System.Drawing.Point(6, 147);
+            this.groupBox2.Location = new System.Drawing.Point(7, 167);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(323, 174);
             this.groupBox2.TabIndex = 2;
@@ -677,6 +739,9 @@
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.EXP_Total_1);
+            this.groupBox9.Controls.Add(this.EXP_Current_1);
+            this.groupBox9.Controls.Add(this.label15);
             this.groupBox9.Controls.Add(this.MP3_Total_1);
             this.groupBox9.Controls.Add(this.MP3_Current_1);
             this.groupBox9.Controls.Add(this.MP2_Total_1);
@@ -692,12 +757,39 @@
             this.groupBox9.Controls.Add(this.label3);
             this.groupBox9.Controls.Add(this.label2);
             this.groupBox9.Controls.Add(this.label1);
-            this.groupBox9.Location = new System.Drawing.Point(6, 19);
+            this.groupBox9.Location = new System.Drawing.Point(7, 19);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(230, 122);
+            this.groupBox9.Size = new System.Drawing.Size(230, 145);
             this.groupBox9.TabIndex = 36;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Character Stats:            Current        Total";
+            // 
+            // EXP_Total_1
+            // 
+            this.EXP_Total_1.AutoSize = true;
+            this.EXP_Total_1.Location = new System.Drawing.Point(177, 128);
+            this.EXP_Total_1.Name = "EXP_Total_1";
+            this.EXP_Total_1.Size = new System.Drawing.Size(13, 13);
+            this.EXP_Total_1.TabIndex = 17;
+            this.EXP_Total_1.Text = "0";
+            // 
+            // EXP_Current_1
+            // 
+            this.EXP_Current_1.AutoSize = true;
+            this.EXP_Current_1.Location = new System.Drawing.Point(120, 128);
+            this.EXP_Current_1.Name = "EXP_Current_1";
+            this.EXP_Current_1.Size = new System.Drawing.Size(13, 13);
+            this.EXP_Current_1.TabIndex = 16;
+            this.EXP_Current_1.Text = "0";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 128);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(28, 13);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "EXP";
             // 
             // MP3_Total_1
             // 
@@ -834,40 +926,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "HP: ";
             // 
-            // Start
-            // 
-            this.Start.Location = new System.Drawing.Point(13, 671);
-            this.Start.Name = "Start";
-            this.Start.Size = new System.Drawing.Size(335, 23);
-            this.Start.TabIndex = 6;
-            this.Start.Text = "Start Reading";
-            this.Start.UseVisualStyleBackColor = true;
-            this.Start.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // Exit
-            // 
-            this.Exit.Location = new System.Drawing.Point(13, 700);
-            this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(518, 23);
-            this.Exit.TabIndex = 7;
-            this.Exit.Text = "Exit";
-            this.Exit.UseVisualStyleBackColor = true;
-            this.Exit.Click += new System.EventHandler(this.button2_Click);
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.groupBox11);
             this.groupBox3.Controls.Add(this.groupBox4);
             this.groupBox3.Controls.Add(this.groupBox12);
-            this.groupBox3.Location = new System.Drawing.Point(354, 12);
+            this.groupBox3.Location = new System.Drawing.Point(348, 6);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(335, 326);
+            this.groupBox3.Size = new System.Drawing.Size(335, 346);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Character 2";
             // 
             // groupBox11
             // 
+            this.groupBox11.Controls.Add(this.Name_2);
+            this.groupBox11.Controls.Add(this.label26);
             this.groupBox11.Controls.Add(this.Level_2);
             this.groupBox11.Controls.Add(this.label11);
             this.groupBox11.Controls.Add(this.AGI_2);
@@ -878,12 +952,30 @@
             this.groupBox11.Controls.Add(this.label17);
             this.groupBox11.Controls.Add(this.label18);
             this.groupBox11.Controls.Add(this.label19);
-            this.groupBox11.Location = new System.Drawing.Point(242, 15);
+            this.groupBox11.Location = new System.Drawing.Point(242, 19);
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(87, 122);
+            this.groupBox11.Size = new System.Drawing.Size(87, 145);
             this.groupBox11.TabIndex = 39;
             this.groupBox11.TabStop = false;
             this.groupBox11.Text = "Base Stats";
+            // 
+            // Name_2
+            // 
+            this.Name_2.AutoSize = true;
+            this.Name_2.Location = new System.Drawing.Point(44, 128);
+            this.Name_2.Name = "Name_2";
+            this.Name_2.Size = new System.Drawing.Size(33, 13);
+            this.Name_2.TabIndex = 22;
+            this.Name_2.Text = "None";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(6, 128);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(38, 13);
+            this.label26.TabIndex = 23;
+            this.label26.Text = "Name:";
             // 
             // Level_2
             // 
@@ -1005,7 +1097,7 @@
             this.groupBox4.Controls.Add(this.label_Water_2);
             this.groupBox4.Controls.Add(this.label_Wind_2);
             this.groupBox4.Controls.Add(this.label_Fire_2);
-            this.groupBox4.Location = new System.Drawing.Point(6, 143);
+            this.groupBox4.Location = new System.Drawing.Point(6, 164);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(327, 177);
             this.groupBox4.TabIndex = 2;
@@ -1252,6 +1344,9 @@
             // 
             // groupBox12
             // 
+            this.groupBox12.Controls.Add(this.EXP_Total_2);
+            this.groupBox12.Controls.Add(this.EXP_Current_2);
+            this.groupBox12.Controls.Add(this.label29);
             this.groupBox12.Controls.Add(this.MP3_Total_2);
             this.groupBox12.Controls.Add(this.MP3_Current_2);
             this.groupBox12.Controls.Add(this.MP2_Total_2);
@@ -1267,12 +1362,39 @@
             this.groupBox12.Controls.Add(this.label33);
             this.groupBox12.Controls.Add(this.label34);
             this.groupBox12.Controls.Add(this.label35);
-            this.groupBox12.Location = new System.Drawing.Point(6, 15);
+            this.groupBox12.Location = new System.Drawing.Point(6, 19);
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(230, 122);
+            this.groupBox12.Size = new System.Drawing.Size(230, 145);
             this.groupBox12.TabIndex = 38;
             this.groupBox12.TabStop = false;
             this.groupBox12.Text = "Character Stats:            Current        Total";
+            // 
+            // EXP_Total_2
+            // 
+            this.EXP_Total_2.AutoSize = true;
+            this.EXP_Total_2.Location = new System.Drawing.Point(177, 128);
+            this.EXP_Total_2.Name = "EXP_Total_2";
+            this.EXP_Total_2.Size = new System.Drawing.Size(13, 13);
+            this.EXP_Total_2.TabIndex = 20;
+            this.EXP_Total_2.Text = "0";
+            // 
+            // EXP_Current_2
+            // 
+            this.EXP_Current_2.AutoSize = true;
+            this.EXP_Current_2.Location = new System.Drawing.Point(120, 128);
+            this.EXP_Current_2.Name = "EXP_Current_2";
+            this.EXP_Current_2.Size = new System.Drawing.Size(13, 13);
+            this.EXP_Current_2.TabIndex = 19;
+            this.EXP_Current_2.Text = "0";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(6, 128);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(28, 13);
+            this.label29.TabIndex = 18;
+            this.label29.Text = "EXP";
             // 
             // MP3_Total_2
             // 
@@ -1414,15 +1536,17 @@
             this.groupBox5.Controls.Add(this.groupBox13);
             this.groupBox5.Controls.Add(this.groupBox14);
             this.groupBox5.Controls.Add(this.groupBox6);
-            this.groupBox5.Location = new System.Drawing.Point(13, 339);
+            this.groupBox5.Location = new System.Drawing.Point(6, 358);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(335, 326);
+            this.groupBox5.Size = new System.Drawing.Size(335, 349);
             this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Character 3";
             // 
             // groupBox13
             // 
+            this.groupBox13.Controls.Add(this.Name_3);
+            this.groupBox13.Controls.Add(this.label47);
             this.groupBox13.Controls.Add(this.Level_3);
             this.groupBox13.Controls.Add(this.label37);
             this.groupBox13.Controls.Add(this.AGI_3);
@@ -1433,12 +1557,30 @@
             this.groupBox13.Controls.Add(this.label43);
             this.groupBox13.Controls.Add(this.label44);
             this.groupBox13.Controls.Add(this.label45);
-            this.groupBox13.Location = new System.Drawing.Point(242, 15);
+            this.groupBox13.Location = new System.Drawing.Point(242, 19);
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(87, 122);
+            this.groupBox13.Size = new System.Drawing.Size(87, 147);
             this.groupBox13.TabIndex = 39;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "Base Stats";
+            // 
+            // Name_3
+            // 
+            this.Name_3.AutoSize = true;
+            this.Name_3.Location = new System.Drawing.Point(45, 130);
+            this.Name_3.Name = "Name_3";
+            this.Name_3.Size = new System.Drawing.Size(33, 13);
+            this.Name_3.TabIndex = 22;
+            this.Name_3.Text = "None";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(7, 131);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(38, 13);
+            this.label47.TabIndex = 23;
+            this.label47.Text = "Name:";
             // 
             // Level_3
             // 
@@ -1532,6 +1674,9 @@
             // 
             // groupBox14
             // 
+            this.groupBox14.Controls.Add(this.EXP_Total_3);
+            this.groupBox14.Controls.Add(this.EXP_Current_3);
+            this.groupBox14.Controls.Add(this.label38);
             this.groupBox14.Controls.Add(this.MP3_Total_3);
             this.groupBox14.Controls.Add(this.MP3_Current_3);
             this.groupBox14.Controls.Add(this.MP2_Total_3);
@@ -1547,12 +1692,39 @@
             this.groupBox14.Controls.Add(this.label65);
             this.groupBox14.Controls.Add(this.label66);
             this.groupBox14.Controls.Add(this.label67);
-            this.groupBox14.Location = new System.Drawing.Point(6, 15);
+            this.groupBox14.Location = new System.Drawing.Point(6, 19);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(230, 122);
+            this.groupBox14.Size = new System.Drawing.Size(230, 147);
             this.groupBox14.TabIndex = 38;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Character Stats:            Current        Total";
+            // 
+            // EXP_Total_3
+            // 
+            this.EXP_Total_3.AutoSize = true;
+            this.EXP_Total_3.Location = new System.Drawing.Point(178, 131);
+            this.EXP_Total_3.Name = "EXP_Total_3";
+            this.EXP_Total_3.Size = new System.Drawing.Size(13, 13);
+            this.EXP_Total_3.TabIndex = 20;
+            this.EXP_Total_3.Text = "0";
+            // 
+            // EXP_Current_3
+            // 
+            this.EXP_Current_3.AutoSize = true;
+            this.EXP_Current_3.Location = new System.Drawing.Point(121, 131);
+            this.EXP_Current_3.Name = "EXP_Current_3";
+            this.EXP_Current_3.Size = new System.Drawing.Size(13, 13);
+            this.EXP_Current_3.TabIndex = 19;
+            this.EXP_Current_3.Text = "0";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(7, 131);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(28, 13);
+            this.label38.TabIndex = 18;
+            this.label38.Text = "EXP";
             // 
             // MP3_Total_3
             // 
@@ -1719,7 +1891,7 @@
             this.groupBox6.Controls.Add(this.label61);
             this.groupBox6.Controls.Add(this.label62);
             this.groupBox6.Controls.Add(this.label63);
-            this.groupBox6.Location = new System.Drawing.Point(6, 143);
+            this.groupBox6.Location = new System.Drawing.Point(6, 166);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(327, 177);
             this.groupBox6.TabIndex = 2;
@@ -1969,16 +2141,18 @@
             this.groupBox7.Controls.Add(this.groupBox15);
             this.groupBox7.Controls.Add(this.groupBox16);
             this.groupBox7.Controls.Add(this.groupBox8);
-            this.groupBox7.Location = new System.Drawing.Point(352, 339);
+            this.groupBox7.Location = new System.Drawing.Point(348, 358);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(335, 326);
+            this.groupBox7.Size = new System.Drawing.Size(335, 349);
             this.groupBox7.TabIndex = 8;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Character 4";
             // 
             // groupBox15
             // 
+            this.groupBox15.Controls.Add(this.Name_4);
             this.groupBox15.Controls.Add(this.Level_4);
+            this.groupBox15.Controls.Add(this.label49);
             this.groupBox15.Controls.Add(this.label69);
             this.groupBox15.Controls.Add(this.AGI_4);
             this.groupBox15.Controls.Add(this.WIT_4);
@@ -1988,12 +2162,21 @@
             this.groupBox15.Controls.Add(this.label75);
             this.groupBox15.Controls.Add(this.label76);
             this.groupBox15.Controls.Add(this.label77);
-            this.groupBox15.Location = new System.Drawing.Point(242, 15);
+            this.groupBox15.Location = new System.Drawing.Point(242, 19);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(87, 122);
+            this.groupBox15.Size = new System.Drawing.Size(87, 147);
             this.groupBox15.TabIndex = 39;
             this.groupBox15.TabStop = false;
             this.groupBox15.Text = "Base Stats";
+            // 
+            // Name_4
+            // 
+            this.Name_4.AutoSize = true;
+            this.Name_4.Location = new System.Drawing.Point(45, 129);
+            this.Name_4.Name = "Name_4";
+            this.Name_4.Size = new System.Drawing.Size(33, 13);
+            this.Name_4.TabIndex = 24;
+            this.Name_4.Text = "None";
             // 
             // Level_4
             // 
@@ -2003,6 +2186,15 @@
             this.Level_4.Size = new System.Drawing.Size(13, 13);
             this.Level_4.TabIndex = 20;
             this.Level_4.Text = "0";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(7, 130);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(38, 13);
+            this.label49.TabIndex = 25;
+            this.label49.Text = "Name:";
             // 
             // label69
             // 
@@ -2087,8 +2279,11 @@
             // 
             // groupBox16
             // 
+            this.groupBox16.Controls.Add(this.EXP_Total_4);
             this.groupBox16.Controls.Add(this.MP3_Total_4);
+            this.groupBox16.Controls.Add(this.EXP_Current_4);
             this.groupBox16.Controls.Add(this.MP3_Current_4);
+            this.groupBox16.Controls.Add(this.label41);
             this.groupBox16.Controls.Add(this.MP2_Total_4);
             this.groupBox16.Controls.Add(this.MP2_Current_4);
             this.groupBox16.Controls.Add(this.MP1_Total_4);
@@ -2102,12 +2297,21 @@
             this.groupBox16.Controls.Add(this.label98);
             this.groupBox16.Controls.Add(this.label99);
             this.groupBox16.Controls.Add(this.label100);
-            this.groupBox16.Location = new System.Drawing.Point(6, 15);
+            this.groupBox16.Location = new System.Drawing.Point(6, 19);
             this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(230, 122);
+            this.groupBox16.Size = new System.Drawing.Size(230, 147);
             this.groupBox16.TabIndex = 38;
             this.groupBox16.TabStop = false;
             this.groupBox16.Text = "Character Stats:            Current        Total";
+            // 
+            // EXP_Total_4
+            // 
+            this.EXP_Total_4.AutoSize = true;
+            this.EXP_Total_4.Location = new System.Drawing.Point(177, 131);
+            this.EXP_Total_4.Name = "EXP_Total_4";
+            this.EXP_Total_4.Size = new System.Drawing.Size(13, 13);
+            this.EXP_Total_4.TabIndex = 23;
+            this.EXP_Total_4.Text = "0";
             // 
             // MP3_Total_4
             // 
@@ -2118,6 +2322,15 @@
             this.MP3_Total_4.TabIndex = 14;
             this.MP3_Total_4.Text = "0";
             // 
+            // EXP_Current_4
+            // 
+            this.EXP_Current_4.AutoSize = true;
+            this.EXP_Current_4.Location = new System.Drawing.Point(120, 131);
+            this.EXP_Current_4.Name = "EXP_Current_4";
+            this.EXP_Current_4.Size = new System.Drawing.Size(13, 13);
+            this.EXP_Current_4.TabIndex = 22;
+            this.EXP_Current_4.Text = "0";
+            // 
             // MP3_Current_4
             // 
             this.MP3_Current_4.AutoSize = true;
@@ -2126,6 +2339,15 @@
             this.MP3_Current_4.Size = new System.Drawing.Size(13, 13);
             this.MP3_Current_4.TabIndex = 13;
             this.MP3_Current_4.Text = "0";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(6, 131);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(28, 13);
+            this.label41.TabIndex = 21;
+            this.label41.Text = "EXP";
             // 
             // MP2_Total_4
             // 
@@ -2274,7 +2496,7 @@
             this.groupBox8.Controls.Add(this.label82);
             this.groupBox8.Controls.Add(this.label83);
             this.groupBox8.Controls.Add(this.label84);
-            this.groupBox8.Location = new System.Drawing.Point(6, 143);
+            this.groupBox8.Location = new System.Drawing.Point(6, 166);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(327, 177);
             this.groupBox8.TabIndex = 2;
@@ -2519,49 +2741,231 @@
             this.label84.TabIndex = 3;
             this.label84.Text = "Fire:";
             // 
-            // label85
+            // tabControl1
             // 
-            this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(537, 708);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(98, 13);
-            this.label85.TabIndex = 9;
-            this.label85.Text = "Refresh Time (ms): ";
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(12, 3);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(698, 768);
+            this.tabControl1.TabIndex = 14;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.Grandia1_Start);
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.groupBox3);
+            this.tabPage1.Controls.Add(this.groupBox5);
+            this.tabPage1.Controls.Add(this.groupBox7);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(690, 742);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Grandia 1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // Grandia1_Start
+            // 
+            this.Grandia1_Start.Location = new System.Drawing.Point(6, 713);
+            this.Grandia1_Start.Name = "Grandia1_Start";
+            this.Grandia1_Start.Size = new System.Drawing.Size(676, 23);
+            this.Grandia1_Start.TabIndex = 15;
+            this.Grandia1_Start.Text = "Start Reading";
+            this.Grandia1_Start.UseVisualStyleBackColor = true;
+            this.Grandia1_Start.Click += new System.EventHandler(this.Grandia1_Start_Click);
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox18);
+            this.tabPage2.Controls.Add(this.Grandia2_Start);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(690, 742);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Grandia 2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox18
+            // 
+            this.groupBox18.Controls.Add(this.Gold_Total);
+            this.groupBox18.Controls.Add(this.MP_Coins_Total);
+            this.groupBox18.Controls.Add(this.SP_Coins_Total);
+            this.groupBox18.Controls.Add(this.label14);
+            this.groupBox18.Controls.Add(this.EXP);
+            this.groupBox18.Controls.Add(this.Gold);
+            this.groupBox18.Controls.Add(this.MP_Coins);
+            this.groupBox18.Controls.Add(this.SP_Coins);
+            this.groupBox18.Controls.Add(this.label13);
+            this.groupBox18.Controls.Add(this.label12);
+            this.groupBox18.Controls.Add(this.label10);
+            this.groupBox18.Location = new System.Drawing.Point(6, 6);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(256, 136);
+            this.groupBox18.TabIndex = 1;
+            this.groupBox18.TabStop = false;
+            this.groupBox18.Text = "Battle Rewards:         Battle           Total";
+            // 
+            // Gold_Total
+            // 
+            this.Gold_Total.AutoSize = true;
+            this.Gold_Total.Location = new System.Drawing.Point(169, 74);
+            this.Gold_Total.Name = "Gold_Total";
+            this.Gold_Total.Size = new System.Drawing.Size(13, 13);
+            this.Gold_Total.TabIndex = 10;
+            this.Gold_Total.Text = "0";
+            // 
+            // MP_Coins_Total
+            // 
+            this.MP_Coins_Total.AutoSize = true;
+            this.MP_Coins_Total.Location = new System.Drawing.Point(169, 49);
+            this.MP_Coins_Total.Name = "MP_Coins_Total";
+            this.MP_Coins_Total.Size = new System.Drawing.Size(13, 13);
+            this.MP_Coins_Total.TabIndex = 9;
+            this.MP_Coins_Total.Text = "0";
+            // 
+            // SP_Coins_Total
+            // 
+            this.SP_Coins_Total.AutoSize = true;
+            this.SP_Coins_Total.Location = new System.Drawing.Point(169, 26);
+            this.SP_Coins_Total.Name = "SP_Coins_Total";
+            this.SP_Coins_Total.Size = new System.Drawing.Size(13, 13);
+            this.SP_Coins_Total.TabIndex = 8;
+            this.SP_Coins_Total.Text = "0";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 96);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(63, 13);
+            this.label14.TabIndex = 7;
+            this.label14.Text = "Experience:";
+            // 
+            // EXP
+            // 
+            this.EXP.AutoSize = true;
+            this.EXP.Location = new System.Drawing.Point(109, 96);
+            this.EXP.Name = "EXP";
+            this.EXP.Size = new System.Drawing.Size(13, 13);
+            this.EXP.TabIndex = 6;
+            this.EXP.Text = "0";
+            // 
+            // Gold
+            // 
+            this.Gold.AutoSize = true;
+            this.Gold.Location = new System.Drawing.Point(109, 74);
+            this.Gold.Name = "Gold";
+            this.Gold.Size = new System.Drawing.Size(13, 13);
+            this.Gold.TabIndex = 5;
+            this.Gold.Text = "0";
+            // 
+            // MP_Coins
+            // 
+            this.MP_Coins.AutoSize = true;
+            this.MP_Coins.Location = new System.Drawing.Point(109, 49);
+            this.MP_Coins.Name = "MP_Coins";
+            this.MP_Coins.Size = new System.Drawing.Size(13, 13);
+            this.MP_Coins.TabIndex = 4;
+            this.MP_Coins.Text = "0";
+            // 
+            // SP_Coins
+            // 
+            this.SP_Coins.AutoSize = true;
+            this.SP_Coins.Location = new System.Drawing.Point(109, 26);
+            this.SP_Coins.Name = "SP_Coins";
+            this.SP_Coins.Size = new System.Drawing.Size(13, 13);
+            this.SP_Coins.TabIndex = 3;
+            this.SP_Coins.Text = "0";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 74);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(32, 13);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Gold:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 49);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(68, 13);
+            this.label12.TabIndex = 1;
+            this.label12.Text = "Magic Coins:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 26);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(74, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Special Coins:";
+            // 
+            // Grandia2_Start
+            // 
+            this.Grandia2_Start.Location = new System.Drawing.Point(6, 657);
+            this.Grandia2_Start.Name = "Grandia2_Start";
+            this.Grandia2_Start.Size = new System.Drawing.Size(681, 24);
+            this.Grandia2_Start.TabIndex = 0;
+            this.Grandia2_Start.Text = "Start Reading";
+            this.Grandia2_Start.UseVisualStyleBackColor = true;
+            this.Grandia2_Start.Click += new System.EventHandler(this.Grandia2_Start_Click);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.groupBox17);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(690, 742);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Settings";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox17
+            // 
+            this.groupBox17.Controls.Add(this.Refresh_Time_Box);
+            this.groupBox17.Controls.Add(this.label85);
+            this.groupBox17.Location = new System.Drawing.Point(3, 3);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(165, 100);
+            this.groupBox17.TabIndex = 0;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "Settings:";
             // 
             // Refresh_Time_Box
             // 
-            this.Refresh_Time_Box.Location = new System.Drawing.Point(641, 705);
+            this.Refresh_Time_Box.Location = new System.Drawing.Point(110, 13);
             this.Refresh_Time_Box.Name = "Refresh_Time_Box";
             this.Refresh_Time_Box.Size = new System.Drawing.Size(48, 20);
-            this.Refresh_Time_Box.TabIndex = 10;
+            this.Refresh_Time_Box.TabIndex = 12;
             this.Refresh_Time_Box.Text = "1000";
             // 
-            // Stop
+            // label85
             // 
-            this.Stop.Location = new System.Drawing.Point(354, 671);
-            this.Stop.Name = "Stop";
-            this.Stop.Size = new System.Drawing.Size(335, 23);
-            this.Stop.TabIndex = 11;
-            this.Stop.Text = "Stop Reading";
-            this.Stop.UseVisualStyleBackColor = true;
-            this.Stop.Click += new System.EventHandler(this.button3_Click);
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(6, 16);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(98, 13);
+            this.label85.TabIndex = 11;
+            this.label85.Text = "Refresh Time (ms): ";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 732);
-            this.Controls.Add(this.Stop);
-            this.Controls.Add(this.Refresh_Time_Box);
-            this.Controls.Add(this.label85);
-            this.Controls.Add(this.groupBox7);
-            this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.Exit);
-            this.Controls.Add(this.Start);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(712, 768);
+            this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Grandia 1 HD Remaster Live EXP Display [UPDATES ONLY IN BATTLE]";
+            this.Text = "Grandia HD Remaster Live Stats Tool";
             this.groupBox1.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
@@ -2590,8 +2994,15 @@
             this.groupBox16.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.groupBox18.ResumeLayout(false);
+            this.groupBox18.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.groupBox17.ResumeLayout(false);
+            this.groupBox17.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -2627,8 +3038,6 @@
         private System.Windows.Forms.ProgressBar Earth_EXP_Progressbar_1;
         private System.Windows.Forms.ProgressBar Water_EXP_Progressbar_1;
         private System.Windows.Forms.ProgressBar Wind_EXP_Progressbar_1;
-        private System.Windows.Forms.Button Start;
-        private System.Windows.Forms.Button Exit;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.ProgressBar Weapon3_EXP_Progressbar_2;
@@ -2717,9 +3126,6 @@
         private System.Windows.Forms.Label label82;
         private System.Windows.Forms.Label label83;
         private System.Windows.Forms.Label label84;
-        private System.Windows.Forms.Label label85;
-        private System.Windows.Forms.TextBox Refresh_Time_Box;
-        private System.Windows.Forms.Button Stop;
         private System.Windows.Forms.ProgressBar Fire_EXP_Progressbar_3;
         private System.Windows.Forms.ProgressBar Earth_EXP_Progressbar_2;
         private System.Windows.Forms.GroupBox groupBox9;
@@ -2830,6 +3236,47 @@
         private System.Windows.Forms.Label label98;
         private System.Windows.Forms.Label label99;
         private System.Windows.Forms.Label label100;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.GroupBox groupBox17;
+        private System.Windows.Forms.TextBox Refresh_Time_Box;
+        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.Button Grandia1_Start;
+        private System.Windows.Forms.Button Grandia2_Start;
+        private System.Windows.Forms.GroupBox groupBox18;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label EXP;
+        private System.Windows.Forms.Label Gold;
+        private System.Windows.Forms.Label MP_Coins;
+        private System.Windows.Forms.Label SP_Coins;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label Gold_Total;
+        private System.Windows.Forms.Label MP_Coins_Total;
+        private System.Windows.Forms.Label SP_Coins_Total;
+        private System.Windows.Forms.Label Name_1;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label EXP_Total_1;
+        private System.Windows.Forms.Label EXP_Current_1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label Name_2;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label EXP_Total_2;
+        private System.Windows.Forms.Label EXP_Current_2;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label Name_3;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label EXP_Total_3;
+        private System.Windows.Forms.Label EXP_Current_3;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label Name_4;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label EXP_Total_4;
+        private System.Windows.Forms.Label EXP_Current_4;
+        private System.Windows.Forms.Label label41;
     }
 }
 
