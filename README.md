@@ -1,9 +1,12 @@
 # Grandia-HD-Remaster-Live-EXP-Display
 ![image](https://user-images.githubusercontent.com/28743231/162574241-a1f592b9-47b8-41bf-b09d-afc1a07c6923.png)
+
 a small simple tool that displays all Characters Magic/Weapon Level and Experience in Real Time via Memory Reading.
 
 i made this tool to be able to see how much experience i can get per skill and optimize my leveling.
 
+
+Grandia 2 has way limited features yet since i didn't progress much in the Game, only SC/MC/Gold & EXP are included for now.
 
 Instructions:
 
