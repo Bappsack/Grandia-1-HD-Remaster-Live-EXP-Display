@@ -1,4 +1,4 @@
-﻿namespace Grandia_1_HD_Remaster_Live_EXP_Display
+﻿namespace Grandia_HD_Remaster_Live_EXP_Display
 {
     public static class Structures
     {
@@ -111,6 +111,10 @@
             public class Character
             {
                 public uint SlotGap;
+
+                public string Name;
+                public int Current_EXP;
+                public int Total_EXP;
 
                 // Character Stats
                 public int HP_Current;

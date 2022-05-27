@@ -1,16 +1,15 @@
-﻿namespace Grandia_1_HD_Remaster_Live_EXP_Display
+﻿namespace Grandia_HD_Remaster_Live_EXP_Display
 {
     public class GameDataOffsets
     {
         public class Grandia1
         {
-            public static string Ingame_Characters_Stats = "grandia.exe+0x00212CAC,100";
+            public static string Battle_Characters_Stats = "grandia.exe+0x002143B4,100";
             public static string DebugMenu = "grandia.exe+0x23B20E";
         }
         public class Grandia2
         {
-            public static string Ingame_Characters_Stats = "grandia2.exe+0x0002D210,54";
-            public static string Ingame_Battle_Rewards = "grandia2.exe+0x002341F4,88";
+            public static string Ingame_Battle_Rewards = "grandia2.exe+0x0028FAA4,88";
         }
     }
     public class Offsets
@@ -92,33 +91,6 @@
                 public uint MP_Total = 0x22C;
                 public uint Gold_Total = 0x224;
             }
-
-            public class CharacterStats
-            {
-                public uint SlotGap = 0x254; // Gap Between Characters
-
-                // Character Stats
-                public uint HP_Current = 0xD4; // 2 Bytes
-                public uint HP_Total = 0xD0; // 2 Bytes
-
-                public uint STR = 0xC0; // 2 Bytes
-                public uint VIT = 0xC2; // 2 Bytes
-                public uint WIT = 0xC4; // 2 Bytes
-                public uint AGI = 0xC6; // 2 Bytes
-                public byte Level = 0xC8; // 1 Byte
-
-                //public uint EXP_Total = 0x7C;
-                //public uint EXP_Next = 0x6C;
-
-
-                /// Skill Points / Magic Points
-                public byte SP_Current = 0xE4; // 2 Bytes
-                public byte SP_Total = 0xE0; // 2 Bytes
-
-                public byte Magic_Current = 0xDC;
-                public byte Magic_Total = 0xD8;
-            }
-
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Grandia_HD_Remaster_Live_EXP_Display;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Grandia_HD_Remaster_Live_EXP_Display;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -9,7 +10,6 @@ namespace Grandia_1_HD_Remaster_Live_EXP_Display
     {
         private readonly static Memory.Mem memory = new Memory.Mem();
         private readonly static Offsets.Grandia2.BattleRewardsOffsets battle_offsets = new Offsets.Grandia2.BattleRewardsOffsets();
-        private readonly static Offsets.Grandia2.CharacterStats character_offsets = new Offsets.Grandia2.CharacterStats();
         private static bool ProcessExist() => System.Diagnostics.Process.GetProcessesByName(Structures.Processes.Grandia2).Length > 0;
 
         public static async void Loop()
@@ -22,8 +22,6 @@ namespace Grandia_1_HD_Remaster_Live_EXP_Display
                 try
                 {
                     byte[] Dump_battle = memory.ReadBytes(GameDataOffsets.Grandia2.Ingame_Battle_Rewards, 4000);
-                    byte[] Dump_characters = memory.ReadBytes(GameDataOffsets.Grandia2.Ingame_Characters_Stats, 6000);
-
 
                     var characters = new List<Structures.Grandia2.Character>();
 
@@ -33,36 +31,25 @@ namespace Grandia_1_HD_Remaster_Live_EXP_Display
                         return;
                     }
 
-                    if (Dump_characters is null || Dump_battle is null)
+                    if (Dump_battle is null)
                     {
                         MessageBox.Show("Unable to read Data!\n\n Make sure you were in a Battle atleast once!");
                         return;
                     }
 
 #if DEBUG
-                    System.IO.File.WriteAllBytes(System.IO.Directory.GetCurrentDirectory() + "\\debug.bin", Dump_characters);
+                    System.IO.File.WriteAllBytes(System.IO.Directory.GetCurrentDirectory() + "\\debug.bin", Dump_battle);
 #endif
 
                     var battle_Stats = new Structures.Grandia2.BattleRewards
                     {
-                        EXP = BitConverter.ToInt16(Dump_battle, (int)battle_offsets.EXP),
-                        Gold = BitConverter.ToInt16(Dump_battle, (int)battle_offsets.Gold),
-                        Gold_Total = BitConverter.ToInt16(Dump_battle, (int)battle_offsets.Gold_Total),
-                        SP_Coins = BitConverter.ToInt16(Dump_battle, (int)battle_offsets.SP_Coins),
-                        SP_Total = BitConverter.ToInt16(Dump_battle, (int)battle_offsets.SP_Total),
-                        MP_Coins = BitConverter.ToInt16(Dump_battle, (int)battle_offsets.MP_Coins),
-                        MP_Total = BitConverter.ToInt16(Dump_battle, (int)battle_offsets.MP_Total),
-                    };
-
-                    var character_Stats = new Structures.Grandia2.Character
-                    {
-                        SP_Current = BitConverter.ToInt16(Dump_battle, (int)character_offsets.SP_Current),
-                        SP_Total = BitConverter.ToInt16(Dump_battle, (int)character_offsets.SP_Total),
-                        Magic_Current = BitConverter.ToInt16(Dump_battle, (int)character_offsets.Magic_Current),
-                        Magic_Total = BitConverter.ToInt16(Dump_battle, (int)character_offsets.Magic_Total),
-                        HP_Current = BitConverter.ToInt16(Dump_battle, (int)character_offsets.HP_Current),
-                        HP_Total = BitConverter.ToInt16(Dump_battle, (int)character_offsets.HP_Total),
-                        Level = BitConverter.ToInt16(Dump_battle, (int)character_offsets.Level),
+                        EXP = BitConverter.ToInt32(Dump_battle, (int)battle_offsets.EXP),
+                        Gold = BitConverter.ToInt32(Dump_battle, (int)battle_offsets.Gold),
+                        Gold_Total = BitConverter.ToInt32(Dump_battle, (int)battle_offsets.Gold_Total),
+                        SP_Coins = BitConverter.ToInt32(Dump_battle, (int)battle_offsets.SP_Coins),
+                        SP_Total = BitConverter.ToInt32(Dump_battle, (int)battle_offsets.SP_Total),
+                        MP_Coins = BitConverter.ToInt32(Dump_battle, (int)battle_offsets.MP_Coins),
+                        MP_Total = BitConverter.ToInt32(Dump_battle, (int)battle_offsets.MP_Total),
                     };
 
                     await Task.Delay(Program.RefreshTime);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Grandia_HD_Remaster_Live_EXP_Display;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -26,7 +27,7 @@ namespace Grandia_1_HD_Remaster_Live_EXP_Display
                         return;
                     }
 
-                    byte[] Characters = memory.ReadBytes(GameDataOffsets.Grandia1.Ingame_Characters_Stats, 3000);
+                    byte[] Characters = memory.ReadBytes(GameDataOffsets.Grandia1.Battle_Characters_Stats, 3000);
 
                     var CharacterList = new List<Structures.Grandia1.Character>();
 
